@@ -1,0 +1,80 @@
+#short-item{
+    box-shadow: 0px 10px 10px 2px rgb(219, 219, 219);
+    margin-left: 20%;
+    margin-top: 50px;
+    border-radius: var(--border-radius);
+    /* justify-content: space-around;
+    flex-direction: column; */
+    background-color: white;
+
+}
+.ul-label{
+    list-style-type: none;
+    display: flex;
+    justify-content: space-evenly;
+    padding-left: 0px;
+}
+.block-item{
+    width: 150px;
+    height: 150px;
+    margin-top: 50px;
+    margin-left: 20px;
+    border-radius: var(--border-radius);
+    background-color: white;
+}
+.content-car{
+    margin-top: 90px;
+    text-align: center;
+}
+.name-car{
+    margin-bottom: 0px;
+}
+.detail-info-partner-left{
+    padding-left: 10px;
+    width: 50%;
+}
+.spans-rate{
+    font-size: 0.9em;
+}
+.detail-info-partner{
+    display:flex; 
+    margin:-150px 0px 0px 530px;
+    background-color:white;
+    border-radius: var(--border-radius);
+    height: 230px;
+    box-shadow: 0px 10px 10px 2px rgb(219, 219, 219);
+
+}
+.detail-info-partner-right{
+    width: 250px;
+    height: fit-content;
+    padding-right: 10px;
+    margin-top: 50px;
+}
+#btn-search{
+    height: 30px;
+}
+.img-nameCar{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+#div-SummaryCarRen{
+    margin-top: -330px;
+    margin-left: 20px;
+    height: 200px;
+    width: 220px;
+    background-color:white;
+    border-radius: var(--border-radius);
+    box-shadow: 0px 10px 10px 2px rgb(219, 219, 219);
+}
+#cate-engine{
+    border:1px solid black;
+    width:60px;
+    text-align:center;
+    font-size:12px;
+    height:18px;
+    padding-top:2.5px; 
+    border-radius:20px;
+    margin-top: 0px;
+}

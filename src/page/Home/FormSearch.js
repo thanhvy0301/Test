@@ -15,10 +15,6 @@ const btnStyle={
     cursor: 'pointer',
     
 }
-const options = [
-  { label: 'The Godfather', id: 1 },
-  { label: 'Pulp Fiction', id: 2 },
-];
 function App() {
     const laBel = ['Cho thuê xe', 'Địa điểm thuê xe của bạn', 'Ngày bắt đầu ', 'Giờ bắt đầu',
     'Ngày kết thúc', 'Giờ kết thúc']
