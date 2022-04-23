@@ -5,17 +5,25 @@ import { css } from 'styled-components';
 import { type } from '@testing-library/user-event/dist/type';
 import { StyledEngineProvider } from '@mui/material/styles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {Categories} from "./Categories.css";
-import PriceRangeSlide from "./PriceRangeSlide";
-import DetailCar from "../DetailCar/DetailCar";
+import KM from "../../Img/KiaMorning.png";
+import VF from "../../Img/VinfastFadil.png";
+function Price (props){
+  // const total = 
+  const changePrice = parseFloat(props.price);
+  const total = Math.floor((changePrice * 3));
+  return (
+      <span style={{fontSize:12, color: 'rgb(104, 113, 118)'}}>{total}</span>
+  )
+}
+
 function ResultSearchCars() {
     return(
     <div style={{display: 'flex', backgroundColor: '#e6e6e6c4!important', flexDirection: 'column'}}>
-            <p style={{paddingLeft: '10px', fontWeight: 'bold', paddingBottom:10}}>Tìm thấy  
+            <p style={{paddingLeft: '10px', fontWeight: 'bold', paddingBottom:0, marginTop:0}}>Tìm thấy  
             <span id="result-cars" style={{color: 'black'}}> 10</span> loại xe</p>
             <div id="content-right">
               <div style={{display: 'flex'}}>
-                <img src="../Img/KiaMorning.webp" style={{objectFit: 'contain', width: '160px', height: '120px', marginTop: '25px'}} />
+                <img src={KM} style={{objectFit: 'contain', width: '160px', height: '120px', marginTop: '25px'}} />
                 <div className="div-detail">
                   <span className="name-car-detail" style={{color: 'black'}}>Kia Morning</span>
                   <p style={{marginBottom: '0px', backgroundColor: 'gainsboro', fontSize: '13px', borderRadius: '20px', width: '65px', height: '20px',
@@ -31,8 +39,8 @@ function ResultSearchCars() {
                     <span style={{color: 'rgb(255, 94, 31)', fontWeight: 'bold', fontSize: '1.7em'}}>609.600 VND</span>
                     <p style={{margin: '0px', padding: '6px 0px 0px 5px', color: 'rgb(104, 113, 118)'}}> / ngày</p></div>
                   <div style={{display: 'flex', justifyContent: 'flex-end', marginTop: '4px'}}>
-                    <span>1.219.200</span>
-                    <p style={{margin: '0px', paddingLeft: '5px', color: 'rgb(104, 113, 118)'}}>VND Tổng</p></div>
+                  <Price  price='609.600'/>
+                    <p style={{margin: '0px', paddingLeft: '5px', color: 'rgb(104, 113, 118)', fontSize:12}}>VND Tổng</p></div>
                 <Link to="/DetailCar">
                 <button type="submit" id="btn-search" style={{width: '220px', margin: '30px 0px 0px 30px'}}>Tiếp tục
                     {/* <a style={{textDecoration: 'none', color: 'white'}}>Tiếp tục</a> */}

@@ -19,7 +19,7 @@ function FilterCategory() {
         <div>
       <form>
         <div style={divContent}>
-          <div id="filter-left">
+          <div id="filter-left" style={{height:800}}>
             <div id="label-filter" style={{display: 'flex', alignItems: 'center', marginLeft: '15px', paddingTop:20, marginBottom:15}}>
               <p style={{width: '70%', fontWeight: 600, marginRight:10}}>BỘ LỌC</p>
               <button type="reset" id="btn-reset-filter" value="xx">Cài lại</button>
@@ -83,8 +83,8 @@ function FilterCategory() {
               </div>
             </div>
             <PriceRangeSlide/>
-            <div id="short-item" className="dropdown-content">
-              <p style={{width: '180px', paddingRight: '10px', fontWeight: 'bold', paddingLeft: '15px'}}>Sắp xếp</p>
+            <div  className="dropdown-content" style={{backgroundColor:'white', borderRadius:10, height:300, marginTop:50}}>
+              <p style={{width: '180px', paddingRight: '10px', fontWeight: 'bold', paddingLeft: '15px',paddingTop:30}}>Sắp xếp</p>
               <div style={{width: 'fit-content', marginLeft: '20px', marginTop: '20px'}}>
                 <label className="container">Tất cả
                   <input type="radio" defaultChecked="checked" name="radio-2" />

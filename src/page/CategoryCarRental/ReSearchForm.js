@@ -4,6 +4,7 @@ import { css } from 'styled-components';
 import { type } from '@testing-library/user-event/dist/type';
 import { StyledEngineProvider } from '@mui/material/styles';
 import { withTheme } from "styled-components";
+import { Dropdown } from "bootstrap";
 function ReSearchForm() {
     const StyleResearch = {
         border: 0,
@@ -23,13 +24,16 @@ function ReSearchForm() {
     return( 
         <div >
         <div id="nav-head">
-            <p style={{paddingLeft: '10px', fontSize: '0.8em', color: 'rgb(133, 133, 133)', marginTop:'10px', marginBottom:20}}>Thuê xe / Thuê xe tự lái</p>
-            <div style={{display: 'flex', width: '1000px', flexDirection: 'column'}}>
-            <h3 style={{width: '800px', marginBottom: '0px', paddingLeft: '10px', marginTop:'10px'}}>Thuê xe tự lái</h3>
-            <div style={{display: 'flex', alignItems: 'center'}}>
-                <p style={{margin: '0px', color: 'rgb(133, 133, 133)', width: '700px', paddingLeft: '10px'}}>NHA TRANG - T3, 19 Thg 04 2022 09:00 - T6, 22 Thg 04 2022 09:00</p>  
-                <button style={StyleResearch} className="menu-btn" onclick="clickDropdown()">Thay đổi tìm kiếm</button>   
-            </div>  
+            <div className="dropdown">
+                <p style={{paddingLeft: '10px', fontSize: '0.8em', color: 'rgb(133, 133, 133)', marginTop:'10px', marginBottom:20}}>Thuê xe / Thuê xe tự lái</p>
+                <div style={{display: 'flex', width: '1000px', flexDirection: 'column'}}>
+                <h3 style={{width: '800px', marginBottom: '0px', paddingLeft: '10px', marginTop:'10px'}}>Thuê xe tự lái</h3>
+                <div style={{display: 'flex', alignItems: 'center'}}>
+                    <p style={{margin: '0px', color: 'rgb(133, 133, 133)', width: '700px', paddingLeft: '10px'}}>NHA TRANG - T3, 19 Thg 04 2022 09:00 - T6, 22 Thg 04 2022 09:00</p>  
+                    <button style={StyleResearch} className="menu-btn" onclick="clickDropdown()">Thay đổi tìm kiếm</button>   
+                </div>  
+        </div>
+            
             <div style={{width: '1000px'}}>                   
                 <div className="menu-content" style={{borderRadius: '0px'}}>
                 <div className="div-search-child" style={{paddingTop: '10px'}}><label style={{marginTop: '10px'}}>Địa điểm thuê xe của bạn</label><br />

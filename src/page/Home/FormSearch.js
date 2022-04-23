@@ -4,6 +4,8 @@ import { css } from 'styled-components';
 import { type } from '@testing-library/user-event/dist/type';
 import { hover } from '@testing-library/user-event/dist/hover';
 import Categories from "../CategoryCarRental/CatagoriesCarRen";
+import DateTimePicker from 'react-datetime-picker';
+import { Dropdown } from 'bootstrap';
 import { Link } from 'react-router-dom';
 const labelStyle = {
     marginTop:'0px',
@@ -18,10 +20,7 @@ const btnStyle={
 function App() {
     const laBel = ['Cho thuê xe', 'Địa điểm thuê xe của bạn', 'Ngày bắt đầu ', 'Giờ bắt đầu',
     'Ngày kết thúc', 'Giờ kết thúc']
-    window.onload = function datePicker() {
-        const dS = document.getElementById('dateStart').valueAsDate = new Date();                      
-        const dE  = document.getElementById('dateEnd').valueAsDate = new Date();                                                                
-    }
+    const dateCurrent = new Date();
   return (
       <div id="form-search" >
         <div class="div-search-child">
@@ -31,14 +30,16 @@ function App() {
             <option>Có tài xế</option>
           </select>
         </div>
-        <div className='div-search-child'>
+      <div>
+      <div className='div-search-child'>
             <label>{laBel[1]}</label><br/>
           <input type="text" placeholder="Điền thành phố, sân bay, hoặc khách sạn" id="address" required/><br />
         </div>
         <div style={{display:'flex', alignItems:'center'}}>
             <div class="div-search-child" style={{width:'fit-content'}}>
                 <label style={labelStyle}>{laBel[2]}</label><br/>
-                <input type={"date"} className="input-date-time" id='dateStart'/>
+                <input type={"date"} className="input-date-time" id='dateStart' value={dateCurrent}/>
+                {/* <DateTimePicker placeholder='Choose time' value={dateCurrent}></DateTimePicker> */}
             </div>
             <div className='div-search-child' style={{width:'fit-content'}}>
                 <label style={{paddingLeft:'10px'}}>{laBel[3]}</label><br/>
@@ -56,6 +57,7 @@ function App() {
             <button type="submit" id="btn-search" style={btnStyle}> Tìm xe</button>    
             </Link>
         </div>
+      </div>
       </div>
   )
 }
