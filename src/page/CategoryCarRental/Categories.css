@@ -251,3 +251,19 @@ div.div-detail{
     padding-left: 30px;
     padding-top: 20px;
 }
+.dropdown-menu.show{
+  margin: 0px;
+  padding: 0px;
+}
+.dropdown-menu{
+  background: none;
+  border: none;
+  margin: 0px 0px 100px 50px;
+}
+.dropdown-menu.show{
+  height: fit-content;
+}
+div.dropdown-menu.show{
+  width: 1000px;
+  margin-right: -29px;
+}

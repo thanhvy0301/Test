@@ -1,6 +1,6 @@
 import React from "react";
 import ReSearchForm from "./ReSearchForm";
-import DropdownItem from "./DropdownItem";
+// import DropdownItem from "./DropdownItem";
 import FilterCategory from "./FilterCategory";
 import PriceRangeSlide from "./PriceRangeSlide";
 import { css } from 'styled-components';
@@ -11,8 +11,7 @@ function ThueXe() {
     return(  
         <div style={{margin:'0px'}}>
             <div style={{ marginLeft: 150,height:'1000px'}}>
-                <ReSearchForm/>
-                <DropdownItem/> 
+                <ReSearchForm/>                
                 <FilterCategory/>
         </div> 
                

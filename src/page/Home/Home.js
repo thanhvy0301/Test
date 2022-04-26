@@ -15,7 +15,7 @@ function contentRight() {
     const list = menuItems.map((item) =>
         <li className='li-content' style={ScrollView} >{item}</li>)
     return(
-        <div id='content'>
+        <div id='content' style={{width:'fit-content'}}>
             <div id='menu-scrollView'>
                 <ul id='ul-scrollView' >{list}</ul>
             </div>

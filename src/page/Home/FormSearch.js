@@ -9,12 +9,14 @@ import { Dropdown } from 'bootstrap';
 import { Link } from 'react-router-dom';
 const labelStyle = {
     marginTop:'0px',
-    paddingTop:'20px'
+    // paddingTop:'20px'
 }
 const btnStyle={
     textDecoration: 'none',
     color: 'white',
     cursor: 'pointer',
+    marginTop:25,
+    height:40
     
 }
 function App() {
@@ -22,7 +24,7 @@ function App() {
     'Ngày kết thúc', 'Giờ kết thúc']
     const dateCurrent = new Date();
   return (
-      <div id="form-search" >
+      <div id="form-search" style={{marginTop:20, width:'fit-content'}}>
         <div class="div-search-child">
           <label style={labelStyle}>{laBel[0]}</label><br/>   
           <select id="option">

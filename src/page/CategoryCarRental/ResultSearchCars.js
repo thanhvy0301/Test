@@ -27,7 +27,7 @@ function ResultSearchCars() {
                 <div className="div-detail">
                   <span className="name-car-detail" style={{color: 'black'}}>Kia Morning</span>
                   <p style={{marginBottom: '0px', backgroundColor: 'gainsboro', fontSize: '13px', borderRadius: '20px', width: '65px', height: '20px',
-                            textAlign: 'center', paddingTop: '5px', color: 'rgb(104, 113, 118)', marginTop:10}}>Tự động</p>
+                            textAlign: 'center', color: 'rgb(104, 113, 118)', marginTop:10}}>Tự động</p>
                   <div style={{display: 'flex', marginTop:5}}>
                     <p style={{width: '50px'}}><i className="fa-solid fa-suitcase" style={{paddingRight: '5px'}} />2</p>
                     <p><FontAwesomeIcon icon="fa-solid fa-suitcase" />2</p>

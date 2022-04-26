@@ -27,14 +27,14 @@ function InfoPartner() {
     return(
         <div className='detail-info-partner' style={{width:475}}>
             <div className='detail-info-partner-left'>
-                <h3>{NamePartner}</h3>
+                <p style={{fontSize:20, marginBottom:0, paddingTop:10}}>{NamePartner}</p>
                 <p style={{color:'rgb(3, 18, 26)', fontWeight:'bold'}}>{Address}</p>
                 <span className='spans-rate'>Chưa có Xếp hạng &amp; Đánh giá</span>
                 <ul id='Ul-Tags'>{UlTags}</ul>
             </div>
             <div className='detail-info-partner-right'>
                 <img src={Logo} style={{paddingLeft:180, paddingBottom:30}}/>
-                  <p style={{width:'fit-content',paddingLeft:140, fontSize:12, color:'rgb(104, 113, 118)', fontWeight:600, marginRight:0, marginTop:0}}>Giá thuê cơ bản từ</p>
+                  <p style={{width:'fit-content',paddingLeft:130, fontSize:12, color:'rgb(104, 113, 118)', fontWeight:600, marginRight:0, marginTop:0}}>Giá thuê cơ bản từ</p>
                   <div style={{display: 'flex', justifyContent: 'flex-end'}}>
                   <span style={{color: 'rgb(255, 94, 31)', fontWeight: 'bold', fontSize: '18px'}}>809.000</span>
                     <p style={{margin: '0px', padding: '6px 0px 0px 5px', color: 'rgb(104, 113, 118)'}}> / ngày</p></div>
