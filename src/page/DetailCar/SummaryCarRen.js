@@ -11,7 +11,7 @@ const Address = ['Nha Trang']
  function SummaryCarRen() {
     return(
         <div id='div-SummaryCarRen'>
-            <h4 style={{paddingLeft:10, marginBottom:0}}>Tóm tắt xe thuê</h4>
+            <h4 style={{paddingLeft:10, marginBottom:0, marginTop:20}}>Tóm tắt xe thuê</h4>
             <div className='img-nameCar'>
                 <div style={{width:50,height:50, border:'1px solid black', borderRadius:5, marginLeft:10}} >
                 <img src={KM} style={{width:45, paddingTop:10}}></img>

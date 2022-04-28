@@ -7,15 +7,17 @@ import { StyledEngineProvider } from '@mui/material/styles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import KM from "../../Img/KiaMorning.png";
 import VF from "../../Img/VinfastFadil.png";
+import { parse } from "@fortawesome/fontawesome-svg-core";
+import axios from "axios";
 function Price (props){
   // const total = 
-  const changePrice = parseFloat(props.price);
-  const total = Math.floor((changePrice * 3));
+  const changePrice = Number(props.price);
+  const total = Math.floor((changePrice * 3)*1000);
   return (
       <span style={{fontSize:12, color: 'rgb(104, 113, 118)'}}>{total}</span>
   )
 }
-
+axios.get('')
 function ResultSearchCars() {
     return(
     <div style={{display: 'flex', backgroundColor: '#e6e6e6c4!important', flexDirection: 'column'}}>

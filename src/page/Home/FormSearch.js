@@ -22,7 +22,8 @@ const btnStyle={
 function App() {
     const laBel = ['Cho thuê xe', 'Địa điểm thuê xe của bạn', 'Ngày bắt đầu ', 'Giờ bắt đầu',
     'Ngày kết thúc', 'Giờ kết thúc']
-    const dateCurrent = new Date();
+    const dateCurrent = new Date().toISOString().slice(0,10);
+    const timeCurrent = (new Date().toISOString().slice(11,16));
   return (
       <div id="form-search" style={{marginTop:20, width:'fit-content'}}>
         <div class="div-search-child">
@@ -45,11 +46,11 @@ function App() {
             </div>
             <div className='div-search-child' style={{width:'fit-content'}}>
                 <label style={{paddingLeft:'10px'}}>{laBel[3]}</label><br/>
-                <input className="input-time" type={"time"}></input>
+                <input className="input-time" type={"time"} value={timeCurrent}></input>
             </div>
             <div class="div-search-child" style={{width:'fit-content', marginLeft:'10px'}}>
                 <label style={labelStyle}>{laBel[2]}</label><br/>
-                <input type={"date"} className="input-date-time" id='dateEnd'/>
+                <input type={"date"} className="input-date-time" id='dateEnd' />
             </div>
             <div className='div-search-child' style={{width:'fit-content'}}>
                 <label style={{paddingLeft:'10px'}}>{laBel[5]}</label><br/>

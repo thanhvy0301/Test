@@ -19,7 +19,7 @@ function FilterCategory() {
         <div>
       <form>
         <div style={divContent}>
-          <div id="filter-left" style={{height:800}}>
+          <div id="filter-left" style={{height:770}}>
             <div id="label-filter" style={{display: 'flex', alignItems: 'center', marginLeft: '15px', paddingTop:20, marginBottom:15}}>
               <p style={{width: '70%', fontWeight: 600, marginRight:10}}>BỘ LỌC</p>
               <button type="reset" id="btn-reset-filter" value="xx">Cài lại</button>
@@ -70,13 +70,13 @@ function FilterCategory() {
             </div>
             <div style={{display: 'flex', alignItems: 'center', justifyContent: 'space-evenly'}}>
               <div className="price">
-                <div style={{display: 'flex', justifyContent: 'space-evenly', marginTop: '4px'}}>
+                <div style={{display: 'flex', justifyContent: 'space-evenly'}}>
                   <label className="vnd">VND</label>
                   <input type="text" className="ip-price" min={0} max={1016000} step={1} defaultValue={0} pattern="{1,15}" />
                 </div>
               </div>
               <div className="price">
-                <div style={{display: 'flex', justifyContent: 'space-evenly', marginTop: '4px'}}>
+                <div style={{display: 'flex', justifyContent: 'space-evenly'}}>
                   <label className="vnd" style={{width: 'fit-content', paddingRight: '5px'}}>VND</label>
                   <input type="text" class="ip-price" min="0" max="1016000" step="1" value="1016000" pattern="{1,15}"/>                  
                 </div>

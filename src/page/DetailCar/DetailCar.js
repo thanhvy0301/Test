@@ -8,9 +8,14 @@ import SortResult from "./SortResult";
 import ListCars from './ListCars';
 import InfoPartner from './InforPartner';
 import SummaryCarRen from './SummaryCarRen';
+import ReSearchFrom from "../CategoryCarRental/ReSearchForm"
 function DetailCar() {    
     return(
         <div>
+            <div style={{marginLeft:200}}>
+                <ReSearchFrom/>
+            </div>
+            
             <div style={{display:'flex', width:'auto', flexWrap:'wrap'}}>
                 <SortResult/>
                 <ListCars/>                      

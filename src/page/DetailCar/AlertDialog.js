@@ -12,7 +12,7 @@ import "./DetailCar.css";
 function Price (props){
   // const total = 
   const changePrice = parseFloat(props.price);
-  const total = Math.floor((changePrice * 3)*1000);
+  const total = Math.floor((changePrice * 3)*1000)
   return (
       <span style={{fontSize:22, color: 'black'}}>{total} VND</span>
   )
@@ -21,7 +21,7 @@ function Price (props){
 function AlertDialog() {
   const [open, setOpen] = React.useState(false);
 
-  const handleClickOpen = () => {
+  const handleClickOpen = () => {    
     setOpen(true);
   };
 
@@ -40,6 +40,7 @@ function AlertDialog() {
         onClose={handleClose}
         aria-describedby="alert-dialog-slide-description"
       >
+        {/* {open && } */}
       <div style={{display:'flex'}}>
         <DialogTitle style={{fontWeight:'bold', width:200}}>{"Chi tiết giá"}</DialogTitle>
         <DialogTitle style={{fontWeight:'bold', width:'fit-content',cursor:'pointer'}} onClick={handleClose}>X</DialogTitle>

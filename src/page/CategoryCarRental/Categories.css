@@ -187,6 +187,7 @@ label{
 .ip-price{
     width: 60px;
     height: fit-content;
+    font-size: 12px;
     border: none;
     background-color: white;
     padding-top: 4px; 

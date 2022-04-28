@@ -15,7 +15,8 @@ const Tags = ['Áp dụng hoàn tiền', 'Đổi lịch lại khả dụng']
 function Price (props){
     // const total = 
     const changePrice = parseFloat(props.price);
-    const total = Math.floor((changePrice * 3));
+    const total = Math.floor((changePrice * 3)*1000);    
+    //console.log(ChangePrice);
     return (
         <span style={{fontSize:12, color: 'rgb(104, 113, 118)'}}>{total}</span>
     )

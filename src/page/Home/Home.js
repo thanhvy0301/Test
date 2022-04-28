@@ -3,8 +3,11 @@ import React from 'react';
 // import {render} from 'react-dom';
 import { css } from 'styled-components';
 import { type } from '@testing-library/user-event/dist/type';
+import Partner from '../Partner/Partner';
+import { Link } from 'react-router-dom';
 import './FormSearch';
 import App from './FormSearch';
+
 function contentRight() {
     const ScrollView = {
         width: '230px',
@@ -20,6 +23,9 @@ function contentRight() {
                 <ul id='ul-scrollView' >{list}</ul>
             </div>
             <App/>
+            <Link to="/Partner">
+                <button type="submit">Đăng nhập</button>    
+            </Link>
         </div>
     )
 }

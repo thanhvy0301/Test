@@ -6,6 +6,9 @@ import Categories from "./page/CategoryCarRental/CatagoriesCarRen";
 import Contact from "./page/Contact";
 import Home from "./page/Home/Home";
 import DetailCar from "./page/DetailCar/DetailCar";
+import Partner from "./page/Partner/Partner";
+import AddNewCars from "./page/Partner/AddNewCars";
+import EditCar from "./page/Partner/EditCar";
 function App() {
     return(
         <div className="app">
@@ -13,6 +16,9 @@ function App() {
                 <Route path="/" element={<Home/>}/>
                 <Route path="/Categories" element={<Categories/>}/>
                 <Route path="/DetailCar" element={<DetailCar/>}/>
+                <Route path="/Partner" element={<Partner/>}/>
+                <Route path="/AddNewCars" element={<AddNewCars/>}/>
+                <Route path="/EditCar" element={<EditCar/>}/>
             </Routes>          
         </div>
     )
