@@ -9,6 +9,7 @@ import KM from "../../Img/KiaMorning.png";
 import VF from "../../Img/VinfastFadil.png";
 import { parse } from "@fortawesome/fontawesome-svg-core";
 import axios from "axios";
+const NameCars = ['Kia Morning', 'Hyundai Grand i10']
 function Price (props){
   // const total = 
   const changePrice = Number(props.price);
@@ -17,9 +18,8 @@ function Price (props){
       <span style={{fontSize:12, color: 'rgb(104, 113, 118)'}}>{total}</span>
   )
 }
-axios.get('')
-function ResultSearchCars() {
-    return(
+function ItemCars() {
+  return(
     <div style={{display: 'flex', backgroundColor: '#e6e6e6c4!important', flexDirection: 'column'}}>
             <p style={{paddingLeft: '10px', fontWeight: 'bold', paddingBottom:0, marginTop:0}}>Tìm thấy  
             <span id="result-cars" style={{color: 'black'}}> 10</span> loại xe</p>
@@ -44,8 +44,7 @@ function ResultSearchCars() {
                   <Price  price='609.600'/>
                     <p style={{margin: '0px', paddingLeft: '5px', color: 'rgb(104, 113, 118)', fontSize:12}}>VND Tổng</p></div>
                 <Link to="/DetailCar">
-                <button type="submit" id="btn-search" style={{width: '220px', margin: '30px 0px 0px 30px'}}>Tiếp tục
-                    {/* <a style={{textDecoration: 'none', color: 'white'}}>Tiếp tục</a> */}
+                <button type="submit" id="btn-search" style={{width: '220px', margin: '30px 0px 0px 30px'}}>Tiếp tục                    
                   </button>
                 </Link>
                   
@@ -53,6 +52,14 @@ function ResultSearchCars() {
           </div>
         </div>
     </div>
+  )
+}
+function ResultSearchCars() {
+  // const list = NameCars.map((item) =>
+  // <p className='li-content'>{item}</p>)
+    
+    return(
+      <div>{ItemCars}</div>
     )
 }
 export default ResultSearchCars;
