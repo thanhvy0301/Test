@@ -2,6 +2,7 @@
 th,td{
     border: 1px solid #ddd;
     padding: 8px;
+    height: fit-content;
 }
 #ListCars{
     font-family: Arial, Helvetica, sans-serif;
@@ -16,10 +17,24 @@ th {
     padding-bottom: 12px;
     text-align: left;
     background-color: #04AA6D;
-    color: white;
+    /*color: white;*/
 }
 tr{
     background-color: white;
+    height: fit-content;
+}
+ul{
+    
+    list-style-type: none;
+}
+/* h4,h5,p{
+    padding-left: 15px;
+    padding-top: 10px;
+} */
+.icon-item{
+    width: 50px;
+    color: rgb(0, 170, 255);
+    padding-right: 30px;
 }
 #header-table{
     background-color: rgb(183, 183, 183);

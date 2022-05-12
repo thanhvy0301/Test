@@ -9,6 +9,7 @@ import DetailCar from "./page/DetailCar/DetailCar";
 import Partner from "./page/Partner/Partner";
 import AddNewCars from "./page/Partner/AddNewCars";
 import EditCar from "./page/Partner/EditCar";
+import InforCarRentail from "../src/page/InforCarRentail/InforCarRentail"
 function App() {
     return(
         <div className="app">
@@ -19,6 +20,7 @@ function App() {
                 <Route path="/Partner" element={<Partner/>}/>
                 <Route path="/AddNewCars" element={<AddNewCars/>}/>
                 <Route path="/EditCar" element={<EditCar/>}/>
+                <Route path="/InforCarRentail" element={<InforCarRentail/>}/>
             </Routes>          
         </div>
     )

@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import AlertDialog from './AlertDialog';
 import "./DetailCar.css";
 import Logo from "../../Img/logoChungXe.png";
+import InforCarRentail from '../InforCarRentail/InforCarRentail'
 import SortResult from "./SortResult";
 import ListCars from './ListCars';
 const NamePartner = ['Chung Xe NHA TRANG']
@@ -44,7 +45,7 @@ function InfoPartner() {
                     <Price  price='609.600'/>
                     <p style={{margin: '0px', paddingLeft: '5px', color: 'rgb(104, 113, 118)', fontSize:12}}>VND Tổng</p>
                     <AlertDialog/></div>
-                <Link to="/DetailCar" style={{width:'fit-content'}}>
+                <Link to="/InforCarRentail" style={{width:'fit-content'}}>
                     <button type="submit" id="btn-search" style={{width: '150px', margin:'20px 0px 0px 100px '}}>Tiếp tục</button>
                 </Link>
             </div>

@@ -18,9 +18,10 @@ function Price (props){
       <span style={{fontSize:12, color: 'rgb(104, 113, 118)'}}>{total}</span>
   )
 }
-function ItemCars() {
-  return(
-    <div style={{display: 'flex', backgroundColor: '#e6e6e6c4!important', flexDirection: 'column'}}>
+function ResultSearchCars() {      
+    return(
+      <div>
+           <div style={{display: 'flex', backgroundColor: '#e6e6e6c4!important', flexDirection: 'column'}}>
             <p style={{paddingLeft: '10px', fontWeight: 'bold', paddingBottom:0, marginTop:0}}>Tìm thấy  
             <span id="result-cars" style={{color: 'black'}}> 10</span> loại xe</p>
             <div id="content-right">
@@ -52,14 +53,7 @@ function ItemCars() {
           </div>
         </div>
     </div>
-  )
-}
-function ResultSearchCars() {
-  // const list = NameCars.map((item) =>
-  // <p className='li-content'>{item}</p>)
-    
-    return(
-      <div>{ItemCars}</div>
+      </div>
     )
 }
 export default ResultSearchCars;
