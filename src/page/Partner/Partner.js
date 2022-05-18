@@ -14,16 +14,37 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import axios from 'axios';
-function Partner(props) {    
-    const [open, setOpen] = React.useState(false);
 
-    const handleClickOpen = () => {    
+const base = `http://localhost:5000/`;
+
+
+export default function Partner() {    
+    const [get, getPost] = React.useState([]);
+    React.useEffect(()=>{
+        axios.get(base).then((res) => {
+        getPost(res.data);
+    });
+},[]);
+
+
+return(
+    <div>
+        <h1>{get.VITRIID}</h1>
+        <p>{get.COUNTRY}</p>
+        <p>{get.CITY}</p>
+        <p>{get.PROVINCE}</p>
+    </div>
+)
+
+}
+
+    /*const handleClickOpen = () => {    
       setOpen(true);
     };
   
     const handleClose = () => {
       setOpen(false);
-    };
+    };*/
     // const ListCars = [
     //   { id: 1, Brand:'Vinfast', Name: "Fadil", Price: 550, Type: "4 Seat" },
     //   { id: 2, Brand: 'Kia', Name: "Kia Morning", Price: 550, Type: "4 Seat" },
@@ -32,22 +53,23 @@ function Partner(props) {
     // ];
     //const ListCars = axios.get("https://jsonplaceholder.typicode.com/posts/");
     //const [car, setCar] = React.useState(ListCars);  
-    const [lists, setLists] = useState([]);
+    /*const [lists, setLists] = useState([]);
     const [loading, setLoading] = useState(false)
      useEffect(()=>{
-         axios.get("https://jsonplaceholder.typicode.com/posts/")
+         axios.get("localhost:5000/")
          .then((res) =>{ 
-             console.table("Getting from :::", res.data)
-             setLists(res.data)
-             setLoading(true)
+             console.table("Getting from :::", res.json());
+             setLists(res);
+             setLoading(true);
          }).catch (error => console.log(error))
      }, [])
      const list = lists.map((data, key) =>{
          return (
              <tr >
                  <td>{data.id}</td>
-                 <td>{data.title}</td>
-                 <td>{data.body}</td>
+                 <td>{data.country}</td>
+                 <td>{data.city}</td>
+                 <td>{data.province}</td>
                  <Link to='/EditCar'>
                     <li id='li-item-table'>Edit</li> 
                 </Link>
@@ -88,8 +110,9 @@ function Partner(props) {
             <thead>
                 <tr style={{height:'fit-content'}}>
                     <th>STT</th>
-                    <th>Title</th>
-                    <th>Content</th> 
+                    <th>country</th>
+                    <th>city</th>
+                    <th>province</th> 
                     <th style={{width:200}}></th>                    
                     </tr>
                     {loading ? (list):<Loading/>}
@@ -145,10 +168,8 @@ function Partner(props) {
                     </div>                   
                 </tr>
                 ))}
-            </table> */}
+                    </table> }
         </div>
      
     );
-  }
-  
-export default Partner;
+  }*/
