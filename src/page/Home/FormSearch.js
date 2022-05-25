@@ -37,7 +37,7 @@ function App() {
       <div className='div-search-child'>
             <label>{laBel[1]}</label><br/>
           <input type="text" placeholder="Điền thành phố, sân bay, hoặc khách sạn" id="address" required/><br />
-        </div>
+      </div>
         <div style={{display:'flex', alignItems:'center'}}>
             <div class="div-search-child" style={{width:'fit-content'}}>
                 <label style={labelStyle}>{laBel[2]}</label><br/>

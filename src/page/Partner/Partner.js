@@ -15,28 +15,86 @@ import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import axios from 'axios';
 
-const base = `http://localhost:5000/`;
 
-
-export default function Partner() {    
-    const [get, getPost] = React.useState([]);
-    React.useEffect(()=>{
-        axios.get(base).then((res) => {
-        getPost(res.data);
-    });
-},[]);
-
-
-return(
-    <div>
-        <h1>{get.VITRIID}</h1>
-        <p>{get.COUNTRY}</p>
-        <p>{get.CITY}</p>
-        <p>{get.PROVINCE}</p>
-    </div>
-)
-
+function Partner() {
+    const [Car, setCar] = useState([]);
+    var urlG = "http://localhost:5000/car";
+    var urlU;
+    useEffect(()=>{
+        const getCar = async() =>{
+            const {data: res} = await axios.get(urlG);
+            setCar(res);
+        };
+        getCar();
+    },[]);
+    const handleDelete = async (car)=>{
+        await axios.delete(`http://localhost:5000/car/deleteCar/${car.XEID}`);
+    };
+    return(
+        <>
+            <div>
+                <Button class="btn btn-primary">Xe</Button>
+                <Button class="btn btn-primary">Vị trí</Button> 
+                <Button class="btn btn-primary">Điều khoản</Button>
+            </div>
+            <Button>Thêm xe</Button>
+            <br/>
+            <table className='table'>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>location</th>
+                        <th>Name Car</th>
+                        <th>Car Price</th>
+                        <th>Car Image</th>
+                        <th>Car Model</th>
+                        <th>Car Type</th>
+                        <th>Number of Seat</th>
+                        <th>Number of Luggage</th>
+                        <th>Office Address</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {Car.map((car)=> 
+                        <tr key={car.XEID}>
+                            <td>{car.XEID}</td>
+                            <td>{car.VITRIID}</td>
+                            <td>{car.TENXE}</td>
+                            <td>{car.GIAXE}</td>
+                            <td>{car.HINHXE}</td>
+                            <td>{car.MAUXE}</td>
+                            <td>{car.LOAIXE}</td>
+                            <td>{car.SOGHE}</td>
+                            <td>{car.SOHANHLY}</td>
+                            <td>{car.DIACHIVANPHONG}</td>
+                            <td>
+                                <Button>Sửa</Button>
+                                <Button onClick={()=> handleDelete(car)}>Xóa</Button>
+                            </td>
+                        </tr>)}
+                </tbody>
+            </table>
+        </>
+    )
+    /*const getLocation = () => {
+        axios.get(url)
+        .then(res => {
+            console.log(res.data);
+            locations = res.data;
+            console.log(locations);
+        })
+        .catch(err => {
+            console.log(err);
+        })
+    }
+    return(
+        <div className='App'>
+            <button onClick={getLocation}>Click me</button>
+        </div>
+    )*/
 }
+export default Partner;
 
     /*const handleClickOpen = () => {    
       setOpen(true);
