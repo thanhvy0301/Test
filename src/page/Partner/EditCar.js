@@ -2,8 +2,9 @@ import React from "react";
 import { css } from 'styled-components';
 import { type } from '@testing-library/user-event/dist/type';
 import { flexbox, style } from "@mui/system";
+import axios from "axios";
 
-const Labels = ['Tên xe', 'Thương hiệu',  'Loại xe', 'Giá thuê xe', 'Số chỗ ngồi']
+/*const Labels = ['Tên xe', 'Thương hiệu',  'Loại xe', 'Giá thuê xe', 'Số chỗ ngồi']
 const Brands = ['Kia', 'Hyundai', 'VinFast', 'Toyota']
 const TypeCars = [' 4 chỗ', '7 chỗ']
 const StyleForm = {
@@ -23,9 +24,9 @@ const StyleItem = {
     display:'flex',
     justifyContent:'space-evenly',
     
-}
+}*/
 function EditCars() {
-    const labels = Labels.map(label =>
+/*    const labels = Labels.map(label =>
         <h5 style={{margin:0}}>{label}</h5>
     )
     const brands = Brands.map(brand =>
@@ -70,6 +71,6 @@ function EditCars() {
                 </form>
             </div>
         </div>
-    )
+    )*/
 }
 export default EditCars;

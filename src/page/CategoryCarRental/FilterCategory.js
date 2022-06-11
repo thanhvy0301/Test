@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {Link} from "react-router-dom";
 import { Slide } from "@mui/material";
 import { css } from 'styled-components';
@@ -8,7 +8,19 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {Categories} from "./Categories.css";
 import PriceRangeSlide from "./PriceRangeSlide";
 import ResultSearchCars from "./ResultSearchCars";
-function FilterCategory() {
+import {useState, useEffect} from "react";
+import axios from "axios";
+function FilterCategory(props) {
+  const [Car, setCar] = useState([]);
+  var urlG = "http://localhost:5000/car/putCar/"+props.id;
+    useEffect(()=>{
+        const getCar = async() =>{
+            const {data: res} = await axios.get(urlG);
+            setCar(res);
+            console.log(Car);
+        };
+        getCar();
+    },[]);
   const divContent = {
     marginTop:250,
     display: 'flex',
@@ -105,7 +117,8 @@ function FilterCategory() {
               </div>
             </div>
           </div>         
-          <ResultSearchCars/>          
+          {Car.map((car)=><ResultSearchCars id={car.XEID} name={car.TENXE} gia={car.GIAXE} hanhly={car.SOHANHLY}
+          ghe={car.SOGHE} loai={car.LOAIXE}/>)}         
         </div>
       </form>
     </div>

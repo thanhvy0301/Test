@@ -4,13 +4,19 @@ import { BrowserRouter } from 'react-router-dom';
 import Categories from "./page/CategoryCarRental/CatagoriesCarRen";
 import './index.css';
 import App from './App';
+import Header from "../src/Component/Header/Header";
+import Footer from "../src/Component/Footer/FooterCustomer";
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
+        <Header/>
       <App />
+      <footer>
+            <Footer/>
+            </footer> 
     </BrowserRouter>    
   </React.StrictMode>
 );

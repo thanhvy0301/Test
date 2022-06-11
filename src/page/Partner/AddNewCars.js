@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { css } from 'styled-components';
 import { type } from '@testing-library/user-event/dist/type';
 import { flexbox, style } from "@mui/system";
 import { Link } from "react-router-dom";
 import { Button } from "bootstrap";
+import {Formik} from "formik";
+import CarForm from "./CarForm";
+import axios from "axios";
 
-const Labels = ['Tên xe', 'Thương hiệu',  'Loại xe', 'Giá thuê xe', 'Số chỗ ngồi', 'Địa điểm cho thuê', 'Loại hộp số']
+/*const Labels = ['Tên xe', 'Thương hiệu',  'Loại xe', 'Giá thuê xe', 'Số chỗ ngồi', 'Địa điểm cho thuê', 'Loại hộp số']
 const Brands = ['Kia', 'Hyundai', 'VinFast', 'Toyota']
 const TypeCars = [' 4 chỗ', '7 chỗ']
 const Address = ['Nha Trang', 'Vũng Tàu', 'TP.HCM', 'Đà Nẵng']
@@ -39,9 +42,59 @@ const StyleBtn = {
     width:130,
     height:40,
     fontWeight:'bold',
-}
-function EditCars() {
-    const labels = Labels.map(label =>
+}*/
+const CreateCar = (type) => {
+    const [infor, setinfor] = useState([]);
+    const handleChange = (e,id)=>{
+        console.log(id);
+        const temp=e.target.value;
+        setinfor((prev)=>({...prev, [id]:temp}))
+        console.log(infor);
+    }
+    const handleCreate = async (e) => {
+        e.preventDefault();
+        const response = await axios({
+            url:'http://localhost:5000/car/createCar',
+            method: 'post',
+            data:{
+                id: infor.id,
+                vitriid: infor.vitriid,
+                tenxe: infor.tenxe,
+                giaxe: infor.giaxe,
+                hinhxe: infor.hinhxe,
+                mauxe: infor.mauxe,
+                loaixe: infor.loaixe,
+                soghe: infor.soghe,
+                sohanhly: infor.sohanhly,
+                diachivanphong: infor.diachivanphong,
+            }
+        })
+        if(response.status===200){
+            console.log("Success");
+        }
+        console.log(infor);
+
+    }
+    return(
+        <>(type?:)
+        <div>
+            <form>
+                <input onChange={e=>{handleChange(e,"id")}}/>
+                <input onChange={e=>{handleChange(e,"vitriid")}}/>
+                <input onChange={e=>{handleChange(e,"tenxe")}}/>
+                <input onChange={e=>{handleChange(e,"giaxe")}}/>
+                <input onChange={e=>{handleChange(e,"hinhxe")}}/>
+                <input onChange={e=>{handleChange(e,"mauxe")}}/>
+                <input onChange={e=>{handleChange(e,"loaixe")}}/>
+                <input onChange={e=>{handleChange(e,"soghe")}}/>
+                <input onChange={e=>{handleChange(e,"sohanhly")}}/>
+                <input onChange={e=>{handleChange(e,"diachivanphong")}}/>
+                <input type="submit" onClick={handleCreate}/>
+            </form>
+        </div>
+        </>
+    );
+/*    const labels = Labels.map(label =>
         <h5 style={{margin:0}}>{label}</h5>
     )
     const brands = Brands.map(brand =>
@@ -119,13 +172,14 @@ function EditCars() {
                             </select>
                         </div>  
                     </div>
-                    {/* <Link to='/Partner'>
+                    { <Link to='/Partner'>
                         <Button> Thêm xe</Button>
-                    </Link> */}
+                    </Link>}
                     <button style={StyleBtn}>Thêm xe</button>
                 </form>
             </div>
         </div>
     )
+}*/
 }
-export default EditCars;
+export default CreateCar

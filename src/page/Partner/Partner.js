@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import bootstrap from 'bootstrap';
 import {Table} from 'react-bootstrap';
 import { useState, useEffect } from 'react';
@@ -14,12 +14,13 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import axios from 'axios';
-
+import { Formik } from 'formik';
 
 function Partner() {
     const [Car, setCar] = useState([]);
     var urlG = "http://localhost:5000/car";
     var urlU;
+    const navigate = useNavigate();
     useEffect(()=>{
         const getCar = async() =>{
             const {data: res} = await axios.get(urlG);
@@ -28,16 +29,24 @@ function Partner() {
         getCar();
     },[]);
     const handleDelete = async (car)=>{
-        await axios.delete(`http://localhost:5000/car/deleteCar/${car.XEID}`);
+        await axios.delete(`http://localhost:5000/car/deleteCar/${car.XEID}`).then((e)=>{
+            navigate('/Partner');
+
+        });
     };
+    const handleUpdate = async (car) => {
+        await axios.put(`http://localhost:3000/EditCar/${car.XEID}`);
+    }
     return(
         <>
             <div>
+                <Link to='/AddNewCars'>
+                    <Button>Thêm xe</Button>
+                </Link>
                 <Button class="btn btn-primary">Xe</Button>
                 <Button class="btn btn-primary">Vị trí</Button> 
                 <Button class="btn btn-primary">Điều khoản</Button>
             </div>
-            <Button>Thêm xe</Button>
             <br/>
             <table className='table'>
                 <thead>
@@ -69,7 +78,9 @@ function Partner() {
                             <td>{car.SOHANHLY}</td>
                             <td>{car.DIACHIVANPHONG}</td>
                             <td>
+                            <Link to='/EditCar'>
                                 <Button>Sửa</Button>
+                            </Link>
                                 <Button onClick={()=> handleDelete(car)}>Xóa</Button>
                             </td>
                         </tr>)}

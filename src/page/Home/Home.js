@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component, Fragment } from 'react';
 // import React, {Component} from 'react';
 // import {render} from 'react-dom';
 import { css } from 'styled-components';
@@ -7,6 +7,14 @@ import Partner from '../Partner/Partner';
 import { Link } from 'react-router-dom';
 import './FormSearch';
 import App from './FormSearch';
+
+import Banner from "../../Component/Banner/Banner";
+import Promotion from "../../Component/Promotion/Promotion";
+import Propose from "../../Component/Explore/Explore";
+import Partners from "../../Component/Partner/Partner";
+import Advantage from "../../Component/Advantage/Advantage";
+import Explore from "../../Component/Propose/Propose";
+
 
 function contentRight() {
     const ScrollView = {
@@ -18,15 +26,24 @@ function contentRight() {
     const list = menuItems.map((item) =>
         <li className='li-content' style={ScrollView} >{item}</li>)
     return(
-        <div id='content' style={{width:'fit-content'}}>
-            <div id='menu-scrollView'>
-                <ul id='ul-scrollView' >{list}</ul>
-            </div>
-            <App/>
-            <Link to="/Partner">
-                <button type="submit">Đăng nhập</button>    
-            </Link>
-        </div>
+        <Fragment>
+                <Banner />
+                
+                <div id='content' style={{width:'fit-content'}}>
+                    <div id='menu-scrollView'>
+                        <ul id='ul-scrollView' >{list}</ul>
+                    </div>
+                    <App/>
+                    <Link to="/Partner">
+                        <button type="submit">Đăng nhập</button>
+                    </Link>
+                </div>
+                <Promotion />
+                <Partners />
+                <Propose />
+                <Advantage />
+                <Explore />
+          </Fragment>
     )
 }
 export default contentRight;
